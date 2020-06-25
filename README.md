@@ -20,7 +20,9 @@ For this one the file we are copying a random sample from is *reads.fastq*, the 
 
 ### Using DIAMOND to align my sample reads
 
-`diamond blastx -d /data/diamondDB/nr.dmnd -q FPES_20180719A.bc04.sub.fastq --range-culling --top 10 -F 15 --outfmt 100 -o FPES_20180719A.bc04.sub100k `
+```
+diamond blastx -d /data/diamondDB/nr.dmnd -q FPES_20180719A.bc04.sub.fastq --range-culling --top 10 -F 15 --outfmt 100 -o FPES_20180719A.bc04.sub100k 
+```
 
 This is using options for range culling (designed for long reads), output format (.daa), top (report alignments in given range), and frameshifts (-F).
 
@@ -31,7 +33,9 @@ These options are based on those in [Arugmugan et al. (2019)](https://doi.org/10
 
 *Note: the default memory usage for MEGAN is set to only 2Gb which causes the daa-meganizer to crash. This was manually changed to 8Gb*
 
-`./daa-meganizer -i ~/FPESprac_202006/FPES_20180719A.bc04.sub100k.daa --longReads --lcaAlgorithm longReads --lcaCoveragePercent 51 --readAssignmentMode alignedBases --mapDB  /data/diamondDB/megan-map-May2020.db -v`
+```
+./daa-meganizer -i ~/FPESprac_202006/FPES_20180719A.bc04.sub100k.daa --longReads --lcaAlgorithm longReads --lcaCoveragePercent 51 --readAssignmentMode alignedBases --mapDB  /data/diamondDB/megan-map-May2020.db -v
+```
 
 Again, these options are based on those in [Arugmugan et al. (2019)](https://doi.org/10.1186/s40168-019-0665-y)
 
