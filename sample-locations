@@ -3,3 +3,10 @@
 
 /mnt/storage/FPES/FPES_20190605A/barcode11/fasta/FPES_20190605A.barcode11.qcreads.fastq
 
+
+
+/mnt/storage/FPES/FPES_20180719A/barcode09/fasta/FPES_20180719A.barcode09.qcreads.fastq
+
+/mnt/storage/FPES/FPES_20190605A/barcode04/fasta/FPES_20190605A.barcode04.qcreads.fastq
+
+diamond blastx -d /data/diamondDB/nr.dmnd -q /mnt/storage/FPES/FPES_20190605A/barcode04/fasta/FPES_20190605A.barcode04.qcreads.fastq --range-culling --top 10 -F 15 --outfmt 100 -o FPES_20190605A_bc04/FPES_20190605A.barcode04
