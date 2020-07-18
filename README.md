@@ -41,4 +41,6 @@ Again, these options are based on those in [Arugmugan et al. (2019)](https://doi
 
 
 
-
+```
+grep -E "(f__)|(^ID)" merge_metaphlan_bracken500.txt | grep -v "g__" | sed 's/^.*f__//g' > merge_abundance_family.txt
+```
