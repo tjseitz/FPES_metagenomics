@@ -100,4 +100,4 @@ The first part of the command is any header row for the *family* level (f__) and
 
 After you run this command, this is what your merged file will look like:
 
-![]()
+![](https://github.com/tjseitz/FPESmetagenomics/blob/master/merged_mpa_family.png?raw=true)
