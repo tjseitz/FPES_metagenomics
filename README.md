@@ -69,8 +69,7 @@ Make sure to specify which normalized files you are using at \*\.norm, in this c
 ```
 This is what your newly merged file will look like if you open in Excel (samples across the columns, with each row being a classification):
 
-![blah](merged_mpa_bracken500.png)
-
+![](https://github.com/tjseitz/FPESmetagenomics/blob/master/merged_mpa_%20bracken500.png?raw=true)
 
 
 
@@ -98,3 +97,7 @@ grep -E "(f__)|(^ID)" merge_metaphlan_bracken500.txt | grep -v "g__" | sed 's/^.
 ```
 
 The first part of the command is any header row for the *family* level (f__) and matches to ID/samples. Note the **two** underscores there! The second grep doesn't print any lines that go to the genus level (g__). The sed then removes the full taxonomy from each line and instead leaves only the f__ family name in this case.
+
+After you run this command, this is what your merged file will look like:
+
+![]()
