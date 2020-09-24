@@ -118,6 +118,6 @@ This is a helpful link for learning about what to do with your mpa file:
 
 [Metaphlan2](https://github.com/biobakery/biobakery/wiki/metaphlan2#create-a-heatmap-with-hclust2)
 
-Try this out once you have the merged mpa too for another type of analysis:
+Try this out once you have the merged mpa for an additional type of analysis:
 
 [LEfSe](http://huttenhower.org/galaxy/)
