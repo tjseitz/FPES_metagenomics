@@ -101,3 +101,11 @@ The first part of the command is any header row for the *family* level (f__) and
 After you run this command, this is what your merged file will look like:
 
 ![](https://github.com/tjseitz/FPESmetagenomics/blob/master/merged_mpa_family.png?raw=true)
+
+This is a helpful link for learning about what to do with your mpa file:
+
+[Metaphlan2](https://github.com/biobakery/biobakery/wiki/metaphlan2#create-a-heatmap-with-hclust2)
+
+Try this out once you have the merged mpa too for another type of analysis:
+
+[LEfSe](http://huttenhower.org/galaxy/)
