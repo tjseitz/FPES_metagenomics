@@ -69,7 +69,8 @@ Make sure to specify which normalized files you are using at \*\.norm, in this c
 ```
 This is what your newly merged file will look like if you open in Excel (samples across the columns, with each row being a classification):
 
-![merged mpa file] (
+![blah](merged_mpa_bracken500.png)
+
 
 
 
