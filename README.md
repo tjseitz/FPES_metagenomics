@@ -47,6 +47,14 @@ These options are based on those in [Arugmugan et al. (2019)](https://doi.org/10
 
 Again, these options are based on those in [Arugmugan et al. (2019)](https://doi.org/10.1186/s40168-019-0665-y)
 
+### Rename your samples to a more useful label
+
+Use the script [sample-locations](sample-locations) to copy and rename your original fasta/q files
+
+
+**If you want to run more than one sample through Diamond and the meganizer, I would use the script** [megan_prep.sh](megan_prep.sh) **which will run your data through Diamond and then the daa-meganizer**
+
+
 
 ---
 
@@ -54,7 +62,7 @@ Again, these options are based on those in [Arugmugan et al. (2019)](https://doi
 
 ### Use Kraken2 + Bracken to classify taxonomy
 
-Use `classify_FPES.sh` with whatever Bracken read length option (or all)
+Use [classify_FPES.sh](classify_FPES.sh) with whatever Bracken read length option (or all)
 
 The lowest portion is normalizing each mpa report, these will be used later for abundance analysis
 
@@ -62,7 +70,9 @@ The lowest portion is normalizing each mpa report, these will be used later for 
 
 Make sure to specify which normalized files you are using at \*\.norm, in this case use Bracken mpa with read length "500"
 
-*remember to change the name from "merge_metaphlan.txt" to whatever data I am actually working with! ^^^*
+The scripts used in this next section are located in the [BNZ_metagenomics] (https://github.com/devindrown/BNZ_metagenomics.git) repo
+
+*remember to change the name from "merge_metaphlan.txt" to whatever data I am actually working with!*
 
 ```
 /mnt/storage/BNZ_metagenomics/scripts/merge_metaphlan_tables.py mpa/*.norm >  merge_metaphlan.txt
@@ -75,6 +85,7 @@ This is what your newly merged file will look like if you open in Excel (samples
 
 These next few lines are some examples of what you can use to make heatmaps based on bray-curtis distance (however, there is little you can control so I would use *pheatmap* in R, which I think you can control the distance measure and cosmetics a lot better)
 
+
 If you want a heatmap of the top most abundant 25 families in your sample:
 ```
 /mnt/storage/BNZ_metagenomics/scripts/metaphlan_hclust_heatmap1.7mod.py --in merge_metaphlan.txt  --top 25 --minv 0.1 -s log --out merge_metaphlan_heatmap.png -f braycurtis -d braycurtis --tax_lev f
@@ -86,9 +97,10 @@ If you want top 150 most abundant species:
 /mnt/storage/BNZ_metagenomics/scripts/metaphlan_hclust_heatmap1.7mod.py --in merge_metaphlan.txt  --top 150 --minv 0.1 -s log --out merge_metaphlan_heatmap_big.png -f braycurtis -d braycurtis --tax_lev s
 ```
 
+
 Soooo, those last two things are helpful if you want to find out the most abundant to a specific taxonomic level, for example, use it to find the top 10 families, but in order to actually make nice heatmaps, you probably want to **clean** your data a bit
 
-**Generate species/family/phlya/blah blah blah only abundance table*
+**Generate species/family/phlya only abundance table**
 
 In order to pare down your data from super long, messy taxonomy headers at all levels of classification use this the following line (I was working with the previously merged file "merge_metaphlan_bracken500.txt"):
 
